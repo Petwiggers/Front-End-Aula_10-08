@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Front aula 10/08</title>
+    <link rel="stylesheet" href="index.css" />
+    <link rel="shortcut icon" href="./src/favicon.ico" type="image/x-icon">
+  </head>
+  <body>
+    <div id="conteiner">
+      <div class="lista">
+        <h3>1. Listar Voos</h3>
+        <h3>2. Comprar passagens</h3>
+        <h3>3. Verificar Passagem</h3>
+        <h3>4. Sair</h3>
+        <input type="number" name="opcao" id="opcao" /><br />
+        <input type="button" value="Botão" onclick="clicou()" id="botao" />
+      </div>
+    </div>
+
+    <script>
+          var elemento = document.getElementById("meuElemento");
+
+          var botao = document.getElementById('botao')
+          botao.addEventListener('mouseover', function () {
+            botao.style.backgroundColor = "rgb(81, 169, 182)"
+          });
+
+          var botao = document.getElementById('botao')
+          botao.addEventListener('mouseout', function () {
+            botao.style.backgroundColor = "white"
+          });
+
+          function clicou() {
+            var opcao = window.document.getElementById('opcao')
+
+            switch (opcao.value)
+                  {
+                      case '1':
+                          ListarVoos();
+                          break;
+                      case '2':
+                          ComprarPassagens();
+                          break;
+                      case '3':
+                          VerificarPassagem();
+                          break;
+                      case '4':
+                          Sair()
+                          return;
+                  }
+          }
+          function ListarVoos() {
+            console.log("Lista de Voos");
+          }
+          function ComprarPassagens() {
+            console.log("Você comprou sua passagem");
+          }
+          function VerificarPassagem() {
+            console.log("Verifcando Passagens");
+          }
+          function Sair() {
+            var lista = document.querySelector(".lista");
+            lista.innerHTML = "";
+            lista.innerHTML = "<h1>Obrigado pela contribuição!<h1>"
+          }
+    </script>
+  </body>
+</html>
